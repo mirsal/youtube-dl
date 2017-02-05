@@ -26,6 +26,18 @@ install: youtube-dl youtube-dl.1 youtube-dl.bash-completion youtube-dl.zsh youtu
 	install -d $(DESTDIR)$(SYSCONFDIR)/fish/completions
 	install -m 644 youtube-dl.fish $(DESTDIR)$(SYSCONFDIR)/fish/completions/youtube-dl.fish
 
+uninstall:
+	rm -f $(DESTDIR)$(BINDIR)/youtube-dl
+	rmdir -p --ignore-fail-on-non-empty $(DESTDIR)$(BINDIR) || true
+	rm -f $(DESTDIR)$(MANDIR)/man1/youtube-dl.1
+	rmdir -p --ignore-fail-on-non-empty $(DESTDIR)$(MANDIR)/man1 || true
+	rm -f $(DESTDIR)$(SYSCONFDIR)/bash_completion.d/youtube-dl
+	rmdir -p --ignore-fail-on-non-empty $(DESTDIR)$(SYSCONFDIR)/bash_completion.d || true
+	rm -f $(DESTDIR)$(SHAREDIR)/zsh/site-functions/_youtube-dl/_youtube-dl
+	rmdir -p --ignore-fail-on-non-empty $(DESTDIR)$(SHAREDIR)/zsh/site-functions || true
+	rm -f $(DESTDIR)$(SYSCONFDIR)/fish/completions/youtube-dl.fish/youtube-dl.fish
+	rmdir -p --ignore-fail-on-non-empty $(DESTDIR)$(SYSCONFDIR)/fish/completions || true
+
 codetest:
 	flake8 .
 
