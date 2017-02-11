@@ -33,9 +33,9 @@ uninstall:
 	rmdir -p $(DESTDIR)$(MANDIR)/man1 || true
 	rm -v -f $(DESTDIR)$(SYSCONFDIR)/bash_completion.d/youtube-dl
 	rmdir -p $(DESTDIR)$(SYSCONFDIR)/bash_completion.d || true
-	rm -v -f $(DESTDIR)$(SHAREDIR)/zsh/site-functions/_youtube-dl/_youtube-dl
-	rmdir -p $(DESTDIR)$(SHAREDIR)/zsh/site-functions || true
-	rm -v -f $(DESTDIR)$(SYSCONFDIR)/fish/completions/youtube-dl.fish/youtube-dl.fish
+	rm -v -f $(DESTDIR)$(SHAREDIR)/zsh/site-functions/_youtube-dl/youtube-dl.zsh
+	rmdir -p $(DESTDIR)$(SHAREDIR)/zsh/site-functions/_youtube-dl || true
+	rm -v -f $(DESTDIR)$(SYSCONFDIR)/fish/completions/youtube-dl.fish
 	rmdir -p $(DESTDIR)$(SYSCONFDIR)/fish/completions || true
 
 codetest:
